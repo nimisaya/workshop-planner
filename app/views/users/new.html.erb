@@ -1,4 +1,13 @@
-<h2>Create account</h2>
+<h2>Join</h2>
+
+<% if @user.errors.full_messages.any? %>
+  <strong>Errors:</strong>
+  <ul>
+    <% @user.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end  %>
+  </ul>
+<% end %>
 
 <%# TODO: Move form to partial %>
 <%# Create account form %>
@@ -16,6 +25,6 @@
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
 
-    <%= f.submit %>
+    <%= f.submit 'Create account' %>
 
 <% end %> 

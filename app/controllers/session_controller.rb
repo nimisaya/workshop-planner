@@ -8,14 +8,16 @@ class SessionController < ApplicationController
     
     # Check email address is not nil and ensure authenticity of user
     if user.present? && user.authenticate(params[:password])
+      # Create session cookie for current user
+      session[:user_id] = user.id
 
-    # Create session cookie for current user
-    session[:user_id] = user.id
-
-    # Load page
-    redirect_to root_path
+      # Load page
+      redirect_to root_path
     else
-      # Login failed
+      # Create message to inform user login failed
+      flash[:error] = 'Invalid email or password'
+
+      # Show login form
       redirect_to login_path
     end # if
   end # create
