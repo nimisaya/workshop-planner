@@ -1,10 +1,25 @@
 class SessionController < ApplicationController
   def new
-  end
+  end # new
 
   def create
-  end
+    # Check email address exists in DB
+    user = User.find_by email: params[:email]
+    
+    # Check email address is not nil and ensure authenticity of user
+    if user.present? && user.authenticate(params[:password])
+
+    # Create session cookie for current user
+    session[:user_id] = user.id
+
+    # Load page
+    redirect_to root_path
+    else
+      # Login failed
+      redirect_to login_path
+    end # if
+  end # create
 
   def destroy
-  end
+  end # destroy
 end
