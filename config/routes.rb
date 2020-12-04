@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'session/new'
-  get 'session/create'
-  get 'session/destroy'
   # Root path
   # root to: 'pages#home'
   root to: 'users#index'
