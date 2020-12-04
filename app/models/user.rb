@@ -8,4 +8,7 @@ class User < ApplicationRecord
               uniqueness: {case_sensitive: false},
               length: {minimum: 4, maximum: 254},
               format: {with: /\A(.+)@(.+)\z/, message: "Please check the email address. It's invalid."}
+
+    # Ensure username is atleast 2 chars long
+    validates :username, length: { minimum: 2 }
 end
