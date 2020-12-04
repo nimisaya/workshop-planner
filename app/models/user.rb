@@ -7,5 +7,5 @@ class User < ApplicationRecord
               presence: true, 
               uniqueness: {case_sensitive: false},
               length: {minimum: 4, maximum: 254},
-              format: {with: /^(.+)@(.+)$/, message: "Please check the email address. It's invalid."}
+              format: {with: /\A(.+)@(.+)\z/, message: "Please check the email address. It's invalid."}
 end
