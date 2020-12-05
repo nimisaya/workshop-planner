@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'workshops/new'
+  get 'workshops/create'
+  get 'workshops/index'
+  get 'workshops/show'
+  get 'workshops/edit'
+  get 'workshops/update'
+  get 'workshops/destroy'
   # Root path
   # root to: 'pages#home'
   root to: 'users#index'
