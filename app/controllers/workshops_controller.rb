@@ -17,8 +17,9 @@ class WorkshopsController < ApplicationController
     @workshop = Workshop.find params[:id]
     @workshop_time = seconds_to_string(@workshop.total_time) unless @workshop.total_time == nil
   end # show
-
+  
   def edit
+    @workshop = Workshop.find params[:id]
   end # edit
 
   def update
