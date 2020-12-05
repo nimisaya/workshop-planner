@@ -1,2 +1,7 @@
-<h1>Workshops#show</h1>
-<p>Find me in app/views/workshops/show.html.erb</p>
+<p><%= @workshop.title %></p>
+<p><%= @workshop.description %></p>
+<p><%= @workshop_time %></p>
+<% if @workshop.user.present?%>
+   <p> Created by: <%= @workshop.user.username %></p>
+<% end %>
+<p>Private? <%= @workshop.private %></p>

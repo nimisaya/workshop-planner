@@ -1,6 +1,7 @@
 <ul>
 <% @workshops.each do |workshop| %>
 <li>
+<%= link_to  workshop.title, workshop_path(workshop.id) %>
     <%= workshop.title %>
 </li>
 <% end %>
