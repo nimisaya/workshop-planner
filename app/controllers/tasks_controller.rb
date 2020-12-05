@@ -10,6 +10,8 @@ class TasksController < ApplicationController
   end
 
   def show
+    @task = Task.find params[:id]
+    @task_time = seconds_to_string @task.time
   end
 
   def edit
