@@ -1,0 +1,17 @@
+<p><%= @workshop.title %></p>
+<p><%= @workshop.description %></p>
+<p><%= @workshop_time %></p>
+<% if @workshop.user.present?%>
+   <p> Created by: <%= @workshop.user.username %></p>
+<% end %>
+<p>Private? <%= @workshop.private %></p>
+
+<strong>Tasks:</strong>
+<ol>
+<% @workshop.tasks.each do |task| %>
+<li> <%= task.title %></li>
+<% end %>
+</ol>
+
+<%= link_to 'Edit', edit_workshop_path(@workshop.id) %>
+<%= link_to 'Delete', workshop_path(@workshop.id), method: 'delete' %>
