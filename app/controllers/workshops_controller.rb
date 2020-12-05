@@ -21,8 +21,11 @@ class WorkshopsController < ApplicationController
   def edit
     @workshop = Workshop.find params[:id]
   end # edit
-
+  
   def update
+    workshop = Workshop.find params[:id]
+    workshop.update workshop_params
+    redirect_to workshop_path(workshop.id)
   end # update
 
   def destroy
