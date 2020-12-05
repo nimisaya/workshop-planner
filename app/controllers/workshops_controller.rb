@@ -29,6 +29,8 @@ class WorkshopsController < ApplicationController
   end # update
 
   def destroy
+    Workshop.destroy params[:id]
+    redirect_to workshops_path
   end # destroy
 
   def workshop_params
