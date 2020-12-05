@@ -6,6 +6,7 @@ class WorkshopsController < ApplicationController
   end
 
   def index
+    @workshops = Workshop.all
   end
 
   def show
