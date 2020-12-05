@@ -1,5 +1,6 @@
 class WorkshopsController < ApplicationController
   def new
+    @workshop = Workshop.new
   end
 
   def create

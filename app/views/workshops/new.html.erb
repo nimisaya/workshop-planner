@@ -1,2 +1,12 @@
-<h1>Workshops#new</h1>
-<p>Find me in app/views/workshops/new.html.erb</p>
+<%= form_with model: @workshop, local: true do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br>
+    <%= f.label :private %>
+    <%= f.text_field :private %>
+    <br>
+    <%= f.submit %>
+<% end %>
