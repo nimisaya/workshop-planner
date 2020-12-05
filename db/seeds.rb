@@ -46,3 +46,18 @@ Workshop.create!(
 )
 
 puts "created #{Workshop.count} workshops called #{Workshop.pluck(:title).join(', ')}."
+
+print "Creating tasks..."
+Task.destroy_all
+
+Task.create!(
+    title: "Lightning talks",
+    description: "This is a description of a retro",
+    time: 0,
+    tools: "Post-its, Sharpies",
+    num_participants: 10,
+    private: false,
+    user_id: user1.id
+)
+
+puts "created #{Task.count} tasks called #{Task.pluck(:title).join(', ')}."

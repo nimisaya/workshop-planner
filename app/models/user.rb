@@ -14,4 +14,5 @@ class User < ApplicationRecord
 
     # Relationships
     has_many :workshop
+    has_many :task
 end
