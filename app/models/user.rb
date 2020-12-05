@@ -11,4 +11,7 @@ class User < ApplicationRecord
 
     # Ensure username is atleast 2 chars long
     validates :username, length: { minimum: 2 }
+
+    # Relationships
+    has_many :workshop
 end
