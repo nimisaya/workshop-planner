@@ -40,4 +40,8 @@ class ApplicationController < ActionController::Base
         # Remove empty units and construct string
         time.reject{|str| str.start_with?("0")}.join(", ")
     end # seconds_to_string
+
+    def string_to_seconds time_string
+        # TODO: Convert time string to seconds
+    end # string_to_seconds
 end # ApplicationController

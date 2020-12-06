@@ -1,0 +1,21 @@
+<%= form_with model: @task, local: true do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <br>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br>
+    <%= f.label :tools %>
+    <%= f.text_field :tools %>
+    <br>
+    <%= f.label :time %>
+    <%= f.number_field :time %>
+    <br>
+    <%= f.label :num_participants %>
+    <%= f.number_field :num_participants %>
+    <br>
+    <%= f.label :private %>
+    <%= f.text_field :private %>
+    <br>
+    <%= f.submit %>
+<% end %>

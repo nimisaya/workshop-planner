@@ -13,6 +13,6 @@ class User < ApplicationRecord
     validates :username, length: { minimum: 2 }
 
     # Relationships
-    has_many :workshop
-    has_many :task
+    has_many :workshops
+    has_many :tasks
 end

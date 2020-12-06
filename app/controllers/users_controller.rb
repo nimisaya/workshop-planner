@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # CREATE
   def new
     @user = User.new
   end # new
@@ -23,18 +24,21 @@ class UsersController < ApplicationController
     end # if
   end # create
 
+  # READ
   def index
   end # index
 
   def show
   end # show
 
+  # UPDATE
   def edit
   end # edit
 
   def update
   end # update
 
+  # DELETE
   def destroy
   end # destroy
 
