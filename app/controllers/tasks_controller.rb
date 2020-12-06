@@ -29,7 +29,6 @@ class TasksController < ApplicationController
   def edit
     @task = Task.find params[:id]
     # Prevent user from accessing edit functionality if they did not create the task
-    puts "Does the task exist? #{@task.id}"
     redirect_to login_path unless @task.user.id == @current_user.id
   end # edit
 
