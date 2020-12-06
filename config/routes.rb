@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   #               DELETE /workshops/:id(.:format)      workshops#destroy
   resources :workshops
 
+  get '/workshops/:id/tasks' => 'workshops#edit_tasks', as: 'edit_workshop_tasks'
+
   # Create routes for tasks
   #     tasks GET    /tasks(.:format)              tasks#index
   #           POST   /tasks(.:format)              tasks#create

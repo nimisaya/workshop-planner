@@ -90,7 +90,7 @@ w2.tasks << t2
 puts "Workshop #{w1.title} has tasks #{w1.tasks.pluck(:title).join(', ')}"
 puts "Workshop #{w2.title} has tasks #{w2.tasks.pluck(:title).join(', ')}"
 
-t3.workshops << w1 << w2
+t3.workshops << w2
 
 puts "Task #{t3.title} has workshops #{t3.workshops.pluck(:title).join(', ')}"
 
