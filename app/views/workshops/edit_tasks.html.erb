@@ -1,8 +1,12 @@
 <h2>Add tasks to <%= @workshop.title %></h2>
+  <%# Create relationship between a workshop and tasks in tasks_workshops table %>
 <%= form_for @workshop do |f| %>
-<%# collection_check_boxes(object, method, collection, value_method, text_method, options = {}, html_options = {}, &block) %>
+<%# Display check boxes for all tasks and pre-select any already associated with the workshop %>
+    <%# collection_check_boxes(object, method, collection, value_method, text_method, options = {}, html_options = {}, &block) %>
   <%= f.collection_check_boxes(:task_ids, @tasks, :id, :task_details) %>
+
   <%= f.submit %>
 <% end %>
 
 <%# TODO: Create new task CTA %>
+<%= link_to 'Create a task', new_task_path %>
