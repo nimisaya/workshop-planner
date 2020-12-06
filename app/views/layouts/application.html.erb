@@ -12,10 +12,10 @@
   <body>
   <header>
     <nav>
-    <h1>Workshop Planner</h1>
+    <h1><%= link_to 'Workshop Planner', workshops_path %></h1>
 
     <% if @current_user.present? %>
-      Welcome YOU, <%= @current_user.username %>
+      Welcome <%= @current_user.username %>!
       |
       <%= link_to 'Logout', login_path, method: 'delete' %>
     <% else %>

@@ -42,6 +42,11 @@ class WorkshopsController < ApplicationController
     redirect_to workshop_path(workshop.id)
   end # update
 
+  def edit_tasks
+    @workshop = Workshop.find params[:id]
+    @tasks = Task.all
+  end # edit_tasks
+
   # DELETE
   def destroy
     Workshop.destroy params[:id]
@@ -51,6 +56,6 @@ class WorkshopsController < ApplicationController
   private
 
   def workshop_params
-    params.require(:workshop).permit(:title, :description, :private)
+    params.require(:workshop).permit(:title, :description, :private, {task_ids: []})
   end # workshop_params
 end # WorkshopsController
