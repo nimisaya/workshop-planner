@@ -53,6 +53,34 @@ class WorkshopsController < ApplicationController
     redirect_to workshops_path
   end # destroy
 
+  def clone
+    # Retrieve the workshop the user wants to clone
+    original_workshop = Workshop.find params[:id]
+
+    # Clone the workshop using duplicate
+    clone_workshop = original_workshop.dup
+
+    # Assign the clone to the current user
+    clone_workshop.user_id = @current_user.id
+
+    # TODO: DO I NEED TO HANDLE THE TASKS SEPARATELY AND ASSIGN THEM -> YES the tasks need to be duplicated as well and assigned to this user
+    
+    # Loop through the original workshops tasks
+
+      # Duplicate task
+      # Set user id to current user
+      # Set workshop id to clone_workshop.id
+
+
+    # TODO: BUT WHAT HAPPENS IF THE USER ALREADY HAS THIS EXACT TASK? HOW DO I HANDLE JUST SETTING THE TASK >-< WORKSHOP RELATIONSHIP instead of giving them duplicates of the task that show up?
+
+    # Commit to the database
+    clone_workshop.save
+
+    # Show workshop -> Created by should be current user instead of original creator
+    redirect_to workshop_path(clone_workshop.id)
+  end
+
   private
 
   def workshop_params
