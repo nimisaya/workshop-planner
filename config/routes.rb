@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   #               DELETE /workshops/:id(.:format)      workshops#destroy
   resources :workshops
 
+  get '/workshops/:id/clone' => 'workshops#clone', as: 'clone_workshop'
   get '/workshops/:id/tasks' => 'workshops#edit_tasks', as: 'edit_workshop_tasks'
 
   # Create routes for tasks
