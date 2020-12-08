@@ -13,7 +13,13 @@
       <ul>
       <% @workshop.tasks.each do |task| %>
       <li class="workshop-task" draggable="true"> 
-         <%= task.title %>
+         <ul>
+         <li><%= task.title %></li>
+
+         <li><%= link_to 'View', task_path(task.id) %></li>
+         <li><%= link_to 'Edit', edit_task_path(task.id) %></li>
+         <li><%= link_to 'Delete', task_path(task.id), method: 'delete' %></li>
+         </ul>
          <%= seconds_to_string(task.time) %>
       </li>
       <% end %>

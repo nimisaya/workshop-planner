@@ -249,8 +249,9 @@ h2 {
 }
 
 .workshop-task {
-    height: 48px;
-    width: var(--button-width);
+    /* height: 48px; */
+    height: 100px;
+    width: 600px;
     background-color: white;
     border: 1px solid blue;
     border-radius: var(--button-radius);
