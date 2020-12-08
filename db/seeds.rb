@@ -45,6 +45,14 @@ w3 = Workshop.create!(
     user_id: user2.id
 )
 
+    Workshop.create!(
+    title: "Text",
+    description: "Testing heroku",
+    total_time: 0,
+    private: false,
+    user_id: nil
+)
+
 puts "created #{Workshop.count} workshops called #{Workshop.pluck(:title).join(', ')}."
 
 print "Creating tasks..."
