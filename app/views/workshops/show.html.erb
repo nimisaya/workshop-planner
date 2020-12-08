@@ -20,10 +20,17 @@
    </section>
    <nav aria-label="Workshop menu">
       <ul>
-         <li><%= link_to 'Edit', edit_workshop_path(@workshop.id) %></li>
-         <li><%= link_to 'Delete', workshop_path(@workshop.id), method: 'delete' %></li>
-         <li><%= link_to 'Add Tasks', edit_workshop_tasks_path %></li>
-         <li><%= link_to 'Clone workshop', clone_workshop_path %></li>
+      <%# Only the creator of the workshop can edit/delete/add tasks%>
+      <% if @current_user.present? %>
+         <% if @current_user == @workshop.user %>
+            <li><%= link_to 'Add Tasks', edit_workshop_tasks_path %></li>
+            <li><%= link_to 'Edit', edit_workshop_path(@workshop.id) %></li>
+            <li><%= link_to 'Delete', workshop_path(@workshop.id), method: 'delete' %></li>
+         <% else %>
+         <%# User must be signed in to clone a workshop%>
+            <li><%= link_to 'Clone workshop', clone_workshop_path %></li>
+         <% end %>
+      <% end %>
       </ul>
    </nav>
 </article>
