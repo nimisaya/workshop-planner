@@ -62,8 +62,6 @@ class WorkshopsController < ApplicationController
 
     # Assign the clone to the current user
     clone_workshop.user_id = @current_user.id
-
-    # TODO: DO I NEED TO HANDLE THE TASKS SEPARATELY AND ASSIGN THEM -> YES the tasks need to be duplicated as well and assigned to this user
     
     # Loop through the original workshops tasks
     original_workshop.tasks.each do |task|
