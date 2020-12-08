@@ -1,9 +1,16 @@
-<h2>Workshops</h2>
-<ul>
+<!--<h2>Workshops</h2>-->
+<ul class="private-workshops">
+<li><%= link_to 'Create a workshop', new_workshop_path, class: "workshop-tile new-workshop"%></li>
 <% @workshops.each do |workshop| %>
 <li>
-<%= link_to  workshop.title, workshop_path(workshop.id) %>
+<%# link_to  workshop.title, workshop_path(workshop.id), class: "workshop-tile" %>
+<%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
+    <strong><%= workshop.title %></strong>
+    <p><%= workshop.description %></p>
+<% end %>
+
 </li>
 <% end %>
+<li class="filling-empty-space-childs"></li>
+<li class="filling-empty-space-childs"></li>
 </ul>
-<%= link_to 'Create a workshop', new_workshop_path %>

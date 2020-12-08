@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    /* Fonts */
+    --heading-font: Poppins, sans-serif;
+    --body-font: sans-serif;
+
+    /* Colours */
+    --hover-color: white; /* Temporary */
+    --background-color: rgb(242,242,247);
+    --dark-blue: #011F3E;
+
+    /* Borders */
+    --card-border: 4px solid white;
+    
+    /* Border radius */
+    --input-radius: 4px;
+    --tile-radius: 8px;
+
+    /* Shadows */
+    --tile-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+};
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+body {
+    margin: 0 auto;
+    max-width: 960px;
+    background-color: var(--background-color);
+    
+    font-family: sans-serif;
+}
+
+#wrapper {
+    height: 100vh;
+    
+    display: grid;
+    grid-template-rows: 0.25fr 1fr auto;
+    grid-gap: 12px;
+    grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    margin: 48px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: right;
+    margin: 0;
+}
+
+nav li {
+    display: inline;
+    padding: 12px;
+    margin-left: 4px;
+    transition: background-color 0.4s ease;
+}
+
+nav li:hover {
+    background-color: var(--hover-color);
+}
+
+nav a {
+    color: grey;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration-line: underline;
+}
+
+/* Prevent hover affect from being applied to user name */
+#greeting-user:hover {
+    background-color: var(--background-color);
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+}
+
+/* TEXT */
+h1, h2 {
+    font-family: var(--heading-font);
+}
+
+h2 {
+    font-size: 22px;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    font-size: 32px;
+    text-decoration: none;
+}
+
+#logo a {
+    text-decoration: none;
+    color: black;
+}
+
+/* FORMS */
+form input {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    
+    width: 343px;
+    height: 48px;
+    border: 1px solid;
+    border-color:var(--dark-blue);
+    border-radius: var(--input-radius);
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+label {
+    margin-bottom: 12px;
+    line-height: 24px;
+    /* background-color: fuchsia; */
+}
+
+.primary-button {
+    height: 48px;
+    width: 343px;
+    background-color: var(--dark-blue);
+    color: white;
+    cursor: pointer;
+}
+
+.secondary-button {
+    height: 48px;
+    color: var(--dark-blue);
+}
+
+.private-workshops {
+    list-style-type: none;
+
+    max-width: 960px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.workshop-tile {
+    background-color: white;
+
+    text-align: left;
+    color: var(--dark-blue);
+    text-decoration: none;
+
+    border: var(--card-border);
+    border-radius: var(--tile-radius);
+    box-shadow: var(--tile-shadow);
+
+    display: block;
+    width: 180px;
+    height: 130px;
+
+    margin: 8px;
+    padding: 24px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.new-workshop {
+    display: inline-block;
+    text-align: center;
+}
+
+.filling-empty-space-childs {
+    display: block;
+    width: 236px;
+    height: 0px;
+    margin: 8px;
+}
+
+.workshop-tile:hover {
+    /* color: rgba(255, 255, 255, 1); */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
