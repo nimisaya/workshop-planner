@@ -73,6 +73,9 @@ header {
 
 main {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
@@ -170,14 +173,14 @@ label {
 }
 
 /* Workshops */
-.workshops {
+/* .workshops {
     display: flex;
     flex-direction: column;
     align-items: left;
-}
+} */
 
 /* Tiles */
-.private-workshops {
+.workshops {
     list-style-type: none;
 
     display: flex;
@@ -224,12 +227,6 @@ label {
     font-size: 52px;
 }
 
-.filling-empty-space-childs {
-    display: block;
-    width: 210px;
-    height: 0px;
-    margin: 8px;
-}
 
 .workshop-tile:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
@@ -240,14 +237,15 @@ label {
     color: var(--primary-colour);
 }
 
-h2 {
-    font-size: 20px;
+.filling-empty-space-childs {
+    display: block;
+    width: 210px;
+    height: 0px;
+    margin: 8px;
 }
 
-.workshop {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+h2 {
+    font-size: 20px;
 }
 
 .workshop-task {

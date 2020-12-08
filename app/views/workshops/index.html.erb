@@ -1,6 +1,5 @@
-<div class="workshops">
 <h2>My workshops</h2>
-<ul class="private-workshops">
+<ul class="workshops">
     <li>
         <%= link_to new_workshop_path, class: "workshop-tile new-workshop" do %>
             <div class="create-symbol">+</div>
@@ -19,7 +18,7 @@
     <li class="filling-empty-space-childs"></li>
 </ul>
 <h2>Suggested workshops</h2>
-<ul class="private-workshops">
+<ul class="workshops">
 <% @templates.each do |workshop| %>
         <li>
             <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
@@ -32,7 +31,7 @@
     <li class="filling-empty-space-childs"></li>
 </ul>
 <h2>Workshops created by others</h2>
-<ul class="private-workshops">
+<ul class="workshops">
 <% @workshops_public.each do |workshop| %>
         <li>
             <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>

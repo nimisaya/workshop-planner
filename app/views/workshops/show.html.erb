@@ -12,7 +12,10 @@
    <section>
       <ul>
       <% @workshop.tasks.each do |task| %>
-      <li class="workshop-task" draggable="true"> <%= task.title %></li>
+      <li class="workshop-task" draggable="true"> 
+         <%= task.title %>
+         <%= seconds_to_string(task.time) %>
+      </li>
       <% end %>
       </ul>
       <%# Display total time %>
