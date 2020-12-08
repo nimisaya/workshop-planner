@@ -1,9 +1,46 @@
-<h2>Workshops</h2>
-<ul>
-<% @workshops.each do |workshop| %>
-<li>
-<%= link_to  workshop.title, workshop_path(workshop.id) %>
-</li>
-<% end %>
+<h2>My workshops</h2>
+<ul class="workshops">
+    <li>
+        <%= link_to new_workshop_path, class: "workshop-tile new-workshop" do %>
+            <div class="create-symbol">+</div>
+            <p>Add a workshop</p>
+        <% end %>
+    </li>
+    <% @workshops_personal.each do |workshop| %>
+        <li>
+            <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
+                <strong><%= workshop.title %></strong>
+                <p><%= workshop.description %></p>
+            <% end %>
+        </li>
+    <% end %>
+    <li class="filling-empty-space-childs"></li>
+    <li class="filling-empty-space-childs"></li>
 </ul>
-<%= link_to 'Create a workshop', new_workshop_path %>
+<h2>Suggested workshops</h2>
+<ul class="workshops">
+<% @templates.each do |workshop| %>
+        <li>
+            <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
+                <strong><%= workshop.title %></strong>
+                <p><%= workshop.description %></p>
+            <% end %>
+        </li>
+    <% end %>
+    <li class="filling-empty-space-childs"></li>
+    <li class="filling-empty-space-childs"></li>
+</ul>
+<h2>Workshops created by others</h2>
+<ul class="workshops">
+<% @workshops_public.each do |workshop| %>
+        <li>
+            <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
+                <strong><%= workshop.title %></strong>
+                <p><%= workshop.description %></p>
+            <% end %>
+        </li>
+    <% end %>
+    <li class="filling-empty-space-childs"></li>
+    <li class="filling-empty-space-childs"></li>
+</ul>
+</div>

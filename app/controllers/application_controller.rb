@@ -34,12 +34,13 @@ class ApplicationController < ActionController::Base
         seconds = remainder
     
         # Add units
-        time = ["#{days} days", "#{hours} hours", "#{minutes} minutes", "#{seconds} seconds"]
+        time = ["#{days} day(s)", "#{hours} hour(s)", "#{minutes} minute(s)", "#{seconds} seconds"]
         # TODO: Handle when singular values i.e. 1 day instead of 1 days
         
         # Remove empty units and construct string
         time.reject{|str| str.start_with?("0")}.join(", ")
     end # seconds_to_string
+    helper_method :seconds_to_string
 
     def string_to_seconds time_string
         # TODO: Convert time string to seconds

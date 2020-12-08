@@ -18,6 +18,10 @@ class WorkshopsController < ApplicationController
   # READ
   def index
     @workshops = Workshop.all
+    @workshops_personal = Workshop.where(user_id: @current_user.id)
+    @templates = Workshop.where(user_id: nil)
+    other_users_workshops = Workshop.where.not(user_id: @current_user.id)
+    @workshops_public = other_users_workshops.where(private: false)
   end # index
 
   def show
@@ -62,8 +66,6 @@ class WorkshopsController < ApplicationController
 
     # Assign the clone to the current user
     clone_workshop.user_id = @current_user.id
-
-    # TODO: DO I NEED TO HANDLE THE TASKS SEPARATELY AND ASSIGN THEM -> YES the tasks need to be duplicated as well and assigned to this user
     
     # Loop through the original workshops tasks
     original_workshop.tasks.each do |task|
