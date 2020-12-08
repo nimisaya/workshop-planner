@@ -1,21 +1,21 @@
 <%= form_with model: @task, local: true do |f| %>
-    <%= f.label :title %>
+    <%= f.label :title %><br>
     <%= f.text_field :title %>
     <br>
-    <%= f.label :description %>
+    <%= f.label :description %><br>
     <%= f.text_field :description %>
     <br>
-    <%= f.label :tools %>
+    <%= f.label :tools %><br>
     <%= f.text_field :tools %>
     <br>
-    <%= f.label :time %>
+    <%= f.label :time, 'How long is the workshop?' %><br>
     <%= f.number_field :time %>
     <br>
-    <%= f.label :num_participants %>
-    <%= f.number_field :num_participants %>
+    <%= f.label :num_participants, 'How many participants?' %><br>
+    <%= f.number_field :num_participants%>
     <br>
-    <%= f.label :private %>
+    <%= f.label :private, 'Would you like to make it private?' %><br>
     <%= f.text_field :private %>
     <br>
-    <%= f.submit, :class => 'primary-button' %>
+    <%= f.submit :class => 'primary-button' %>
 <% end %>
