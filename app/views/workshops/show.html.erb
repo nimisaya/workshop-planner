@@ -1,19 +1,29 @@
-<h2><%= @workshop.title %></h2>
-<p><%= @workshop.description %></p>
-<% if @workshop.user.present?%>
-   <p>Created by: <%= @workshop.user.username %></p>
-<% end %>
-<p>Private? <%= @workshop.private %></p>
-
-<strong>Tasks:</strong>
-<ol>
-<% @workshop.tasks.each do |task| %>
-<li> <%= task.title %></li>
-<% end %>
-</ol>
-
-<%= link_to 'Edit', edit_workshop_path(@workshop.id) %>
-<%= link_to 'Delete', workshop_path(@workshop.id), method: 'delete' %>
-<%= link_to 'Add Tasks', edit_workshop_tasks_path %>
-<%= link_to 'Clone workshop', clone_workshop_path %>
-<p><%= @workshop_time %></p>
+<article class="workshop">
+   <header class="workshop-description">
+      <h2><%= @workshop.title %></h2>
+      <p><%= @workshop.description %></p>
+      <% if @workshop.user.present?%>
+      <p><%= @workshop_time %></p>
+         <p>Created by: <%= @workshop.user.username %></p>
+      <% end %>
+      <p>Private? <%= @workshop.private %></p>
+   </header>
+   <br>
+   <section>
+      <ul>
+      <% @workshop.tasks.each do |task| %>
+      <li class="workshop-task" draggable="true"> <%= task.title %></li>
+      <% end %>
+      </ul>
+      <%# Display total time %>
+      <div class="total-time"><%= @workshop_time %></div>
+   </section>
+   <nav aria-label="Workshop menu">
+      <ul>
+         <li><%= link_to 'Edit', edit_workshop_path(@workshop.id) %></li>
+         <li><%= link_to 'Delete', workshop_path(@workshop.id), method: 'delete' %></li>
+         <li><%= link_to 'Add Tasks', edit_workshop_tasks_path %></li>
+         <li><%= link_to 'Clone workshop', clone_workshop_path %></li>
+      </ul>
+   </nav>
+</article>

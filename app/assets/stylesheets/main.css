@@ -27,7 +27,7 @@
     --tile-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 
     /* Dimensions */
-    --body-max-width: 960px;
+    --body-max-width: 800px;
     --tile-width: 210px;
     --form-width: 343px;
     --button-width: 343px;
@@ -73,15 +73,6 @@ header {
 
 main {
     grid-area: main;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-main h2 {
-    /* align-self: left; */
-    font-size: 20px;
 }
 
 footer {
@@ -152,7 +143,6 @@ nav a:hover {
     font-size: large;
 }
 
-
 .primary-button {
     background-color: var(--primary-colour);
     color: white;
@@ -179,11 +169,17 @@ label {
     line-height: 24px;
 }
 
+/* Workshops */
+.workshops {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
 /* Tiles */
 .private-workshops {
     list-style-type: none;
 
-    max-width: 960px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -212,16 +208,20 @@ label {
     margin: 8px;
     padding: 12px;
 
+    color: dimgray;
+
     transition: all 0.2s ease-in-out;
 }
 
 .new-workshop {
     display: inline-block;
     text-align: center;
+    color: dimgray;
 }
 
 .create-symbol {
-    font-size: 56px;
+    font-family: var(--heading-font);
+    font-size: 52px;
 }
 
 .filling-empty-space-childs {
@@ -233,4 +233,34 @@ label {
 
 .workshop-tile:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
+.workshop-tile strong {
+    line-height: 32px;
+    color: var(--primary-colour);
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.workshop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workshop-task {
+    height: 48px;
+    width: var(--button-width);
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: var(--button-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 12px;
+    cursor: move;
 }

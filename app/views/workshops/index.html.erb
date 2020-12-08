@@ -1,10 +1,10 @@
+<div class="workshops">
 <h2>My workshops</h2>
-
 <ul class="private-workshops">
     <li>
         <%= link_to new_workshop_path, class: "workshop-tile new-workshop" do %>
             <div class="create-symbol">+</div>
-            <p>Create a workshop</p>
+            <p>Add a workshop</p>
         <% end %>
     </li>
     <% @workshops.each do |workshop| %>
@@ -18,3 +18,4 @@
     <li class="filling-empty-space-childs"></li>
     <li class="filling-empty-space-childs"></li>
 </ul>
+</div>
