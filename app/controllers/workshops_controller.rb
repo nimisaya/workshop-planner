@@ -18,10 +18,15 @@ class WorkshopsController < ApplicationController
   # READ
   def index
     @workshops = Workshop.all
-    @workshops_personal = Workshop.where(user_id: @current_user.id)
-    # @templates = Workshop.where(user_id: nil)
-    # other_users_workshops = Workshop.where.not(user_id: @current_user.id)
-    # @workshops_public = other_users_workshops.where(private: false)
+    if @current_user.present?
+      @workshops_personal = Workshop.where(user_id: @current_user.id) 
+      @templates = Workshop.where(user_id: nil) 
+      other_users_workshops = Workshop.where.not(user_id: @current_user.id) and Workshop.where.not(user_id: nil)
+      @workshops_public = other_users_workshops.where(private: false)
+    else
+      @templates = Workshop.where(user_id: nil) 
+      @workshops_public = Workshop.where(private: false)
+    end # if
   end # index
 
   def show
