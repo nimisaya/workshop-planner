@@ -1,8 +1,7 @@
-<p><%= @workshop.title %></p>
+<h2><%= @workshop.title %></h2>
 <p><%= @workshop.description %></p>
-<p><%= @workshop_time %></p>
 <% if @workshop.user.present?%>
-   <p> Created by: <%= @workshop.user.username %></p>
+   <p>Created by: <%= @workshop.user.username %></p>
 <% end %>
 <p>Private? <%= @workshop.private %></p>
 
@@ -17,3 +16,4 @@
 <%= link_to 'Delete', workshop_path(@workshop.id), method: 'delete' %>
 <%= link_to 'Add Tasks', edit_workshop_tasks_path %>
 <%= link_to 'Clone workshop', clone_workshop_path %>
+<p><%= @workshop_time %></p>
