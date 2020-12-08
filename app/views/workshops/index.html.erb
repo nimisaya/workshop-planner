@@ -7,7 +7,7 @@
             <p>Add a workshop</p>
         <% end %>
     </li>
-    <% @workshops.each do |workshop| %>
+    <% @workshops_personal.each do |workshop| %>
         <li>
             <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
                 <strong><%= workshop.title %></strong>
@@ -17,5 +17,9 @@
     <% end %>
     <li class="filling-empty-space-childs"></li>
     <li class="filling-empty-space-childs"></li>
+</ul>
+<ul class="template-workshops">
+</ul>
+<ul class="public-workshops">
 </ul>
 </div>

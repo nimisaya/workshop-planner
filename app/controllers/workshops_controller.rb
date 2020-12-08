@@ -18,6 +18,7 @@ class WorkshopsController < ApplicationController
   # READ
   def index
     @workshops = Workshop.all
+    @workshops_personal = Workshop.where(user_id: @current_user.id)
   end # index
 
   def show
