@@ -18,8 +18,30 @@
     <li class="filling-empty-space-childs"></li>
     <li class="filling-empty-space-childs"></li>
 </ul>
-<ul class="template-workshops">
+<h2>Suggested workshops</h2>
+<ul class="private-workshops">
+<% @templates.each do |workshop| %>
+        <li>
+            <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
+                <strong><%= workshop.title %></strong>
+                <p><%= workshop.description %></p>
+            <% end %>
+        </li>
+    <% end %>
+    <li class="filling-empty-space-childs"></li>
+    <li class="filling-empty-space-childs"></li>
 </ul>
-<ul class="public-workshops">
+<h2>Workshops created by others</h2>
+<ul class="private-workshops">
+<% @workshops_public.each do |workshop| %>
+        <li>
+            <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
+                <strong><%= workshop.title %></strong>
+                <p><%= workshop.description %></p>
+            <% end %>
+        </li>
+    <% end %>
+    <li class="filling-empty-space-childs"></li>
+    <li class="filling-empty-space-childs"></li>
 </ul>
 </div>
