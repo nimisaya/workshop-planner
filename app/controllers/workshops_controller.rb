@@ -79,13 +79,10 @@ class WorkshopsController < ApplicationController
       # Set user id to current user
       clone_task.user_id = @current_user.id
       # Set workshop id to clone_workshop.id
-      clone_task.workshops << clone_workshop
+      clone_task.workshop = clone_workshop
       # Commit to database
       clone_task.save
     end
-
-
-    # TODO: BUT WHAT HAPPENS IF THE USER ALREADY HAS THIS EXACT TASK? HOW DO I HANDLE JUST SETTING THE TASK >-< WORKSHOP RELATIONSHIP instead of giving them duplicates of the task that show up?
 
     # Commit to the database
     clone_workshop.save

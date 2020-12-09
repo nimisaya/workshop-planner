@@ -65,7 +65,9 @@ t1 = Task.create!(
     tools: "Post-its, Sharpies",
     num_participants: 10,
     private: false,
-    user_id: user1.id
+    position: 0,
+    user_id: user1.id,
+    workshop_id: w1.id
 )
 
 t2 = Task.create!(
@@ -75,7 +77,9 @@ t2 = Task.create!(
     tools: "A4 paper, Sharpies",
     num_participants: 10,
     private: false,
-    user_id: nil
+    position: nil,
+    user_id: nil,
+    workshop_id: nil
 )
 
 t3 = Task.create!(
@@ -85,21 +89,23 @@ t3 = Task.create!(
     tools: "A4 paper, Sharpies",
     num_participants: 10,
     private: false,
-    user_id: nil
+    position: nil,
+    user_id: nil,
+    workshop_id: nil
 )
 
 puts "created #{Task.count} tasks called #{Task.pluck(:title).join(', ')}."
 
-puts "Tasks >-< Workshops"
+# puts "Tasks >-< Workshops"
 
-w1.tasks << t1 << t2
-w2.tasks << t2
+# w1.tasks << t1 << t2
+# w2.tasks << t2
 
-puts "Workshop #{w1.title} has tasks #{w1.tasks.pluck(:title).join(', ')}"
-puts "Workshop #{w2.title} has tasks #{w2.tasks.pluck(:title).join(', ')}"
+# puts "Workshop #{w1.title} has tasks #{w1.tasks.pluck(:title).join(', ')}"
+# puts "Workshop #{w2.title} has tasks #{w2.tasks.pluck(:title).join(', ')}"
 
-t3.workshops << w2
+# t3.workshops << w2
 
-puts "Task #{t3.title} has workshops #{t3.workshops.pluck(:title).join(', ')}"
+# puts "Task #{t3.title} has workshops #{t3.workshops.pluck(:title).join(', ')}"
 
 
