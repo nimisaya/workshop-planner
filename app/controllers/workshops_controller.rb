@@ -17,7 +17,6 @@ class WorkshopsController < ApplicationController
 
   # READ
   def index
-    @workshops = Workshop.all
     if @current_user.present?
       @workshops_personal = Workshop.where(user_id: @current_user.id) 
       @templates = Workshop.where(user_id: nil) 
@@ -25,7 +24,8 @@ class WorkshopsController < ApplicationController
       @workshops_public = other_users_workshops.where(private: false)
     else
       @templates = Workshop.where(user_id: nil) 
-      @workshops_public = Workshop.where(private: false)
+      other_users_workshops = Workshop.where.not(user_id: nil)
+      @workshops_public = other_users_workshops.where(private: false)
     end # if
   end # index
 
