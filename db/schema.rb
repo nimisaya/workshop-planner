@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_042413) do
+ActiveRecord::Schema.define(version: 2020_12_09_042719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_042413) do
     t.integer "user_id"
     t.text "tools"
     t.integer "position"
+    t.integer "workshop_id"
   end
 
   create_table "tasks_workshops", force: :cascade do |t|
