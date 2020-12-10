@@ -9,23 +9,25 @@
       <p>Private? <%= @workshop.private %></p>
    </header>
    <br>
-   <section>
+   <section class="task-list">
       <ul>
-      <% @workshop.tasks.each do |task| %>
-      <li class="workshop-task" draggable="true"> 
-         <ul>
-         <li><%= task.title %></li>
-
-         <li><%= link_to 'View', task_path(task.id) %></li>
-         <li><%= link_to 'Edit', edit_task_path(task.id) %></li>
-         <li><%= link_to 'Delete', task_path(task.id), method: 'delete' %></li>
-         </ul>
-         <%= seconds_to_string(task.time) %>
-      </li>
+         <% @workshop.tasks.each do |task| %>
+         <li>
+            <span class="task-details">
+            <%= link_to task.title, task_path(task.id) %>
+            <%= seconds_to_string(task.time) unless task.time == nil %>
+            </span>
+            <span class="description"><%= task.description%></span>
+         </li>
       <% end %>
-      </ul>
       <%# Display total time %>
-      <div class="total-time"><%= @workshop_time %></div>
+      <li>
+         <span class="task-details">
+            <p>Total time</p>
+            <%= @workshop_time %>
+         </span>
+      </li>
+      </ul>
    </section>
    <nav aria-label="Workshop menu">
       <ul>

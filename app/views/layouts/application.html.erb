@@ -19,9 +19,15 @@
             <%= @current_user.username %>
           </li>
           <li>
+            <%= link_to 'My workshops', workshops_path, class: "nav-button" %>
+          </li>
+          <li>
             <%= link_to 'Logout', login_path, method: 'delete', class: "nav-button" %>
           </li>
         <% else %>
+          <li>
+            <%= link_to 'Workshops', workshops_path, class: "nav-button" %>
+          </li>
           <li>
             <%= link_to 'Login', login_path, class: "nav-button"  %>
           </li>
@@ -41,6 +47,6 @@
       <footer> 
         <small>&copy; Amanda Jarvinen, 2020</small> 
       </footer>
-    </div><!-- .wrapper -->
+    </div><!-- #wrapper -->
   </body>
 </html>
