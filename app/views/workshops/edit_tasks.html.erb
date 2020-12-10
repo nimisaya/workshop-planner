@@ -1,30 +1,44 @@
-<h2>Add tasks to <%= @workshop.title %></h2>
+<br>
+<br>
+<div class="workshops">
+  <h2>Add tasks to <%= @workshop.title %></h2>
+  <br>
+  <%= form_for @workshop do |f| %>
+  <%# Display check boxes for all tasks and pre-select any already associated with the workshop %>
+      <div class="task-section-heading">
+        <h2>My tasks</h2>
+      </div>
+    <br>
+    <ul class="checkbox-group">
+      <%= f.collection_check_boxes(:task_ids, @personal_tasks, :id, :task_details) do |b| %>
+        <li><%= b.label class: "checkbox-label" do%>
+          <%= b.check_box %>
+        <span class="checkbox-text"><%= b.text %></span>
+        <% end %></li>
+      <% end %>
+          <li class="filling-empty-space-childs"></li>
+          <li class="filling-empty-space-childs"></li>
+    </ul>
 
-<%= form_for @workshop do |f| %>
-<%# Display check boxes for all tasks and pre-select any already associated with the workshop %>
-  <p>Your tasks</p>
-  <ul class="checkbox-group">
-    <%= f.collection_check_boxes(:task_ids, @personal_tasks, :id, :task_details) do |b| %>
+    <br>
+    <div class="task-section-heading">
+      <h2>Suggested tasks</h2>
+    </div>
+    <br>
+    <ul class="checkbox-group">
+    <%= f.collection_check_boxes(:task_ids, @template_tasks, :id, :task_details) do |b| %>
       <li><%= b.label class: "checkbox-label" do%>
         <%= b.check_box %>
       <span class="checkbox-text"><%= b.text %></span>
       <% end %></li>
     <% end %>
-  </ul>
+              <li class="filling-empty-space-childs"></li>
+          <li class="filling-empty-space-childs"></li>
+    </ul>
+    <br>
 
-
-  <p>Suggested for you</p>
-  <ul class="checkbox-group">
-  <%= f.collection_check_boxes(:task_ids, @template_tasks, :id, :task_details) do |b| %>
-    <li><%= b.label class: "checkbox-label" do%>
-      <%= b.check_box %>
-     <span class="checkbox-text"><%= b.text %></span>
-    <% end %></li>
+    <%= f.submit  class: "primary-button submit-button" %>
   <% end %>
-  </ul>
-  <br>
 
-  <%= f.submit  class: "primary-button"%>
-<% end %>
-
-<%= link_to 'Create a task', new_task_path %>
+  <%= link_to 'Create a task', new_task_path %>
+</div>
