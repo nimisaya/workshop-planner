@@ -396,7 +396,7 @@ textarea {
     text-align: center;
 }
 
-.submit-button {
+.submit-button, .secondary-button {
     display: block;
     margin-left: auto;
     margin-right: auto;

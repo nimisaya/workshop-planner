@@ -1,4 +1,8 @@
+<br>
+<div class="task-section-heading">
 <h2>Login</h2>
+</div>
+<br>
 
 <%# Print out an error message, if the SessionController set one %>
 <% if flash[:error] %>
@@ -16,6 +20,6 @@
     <%= f.label :password %><br>
     <%= f.password_field :password %><br>
 
-    <%= f.submit 'Login', :class => 'primary-button' %>
+    <%= f.submit 'Login', class: 'primary-button' %>
 <% end %>
-<%= link_to 'Cancel', workshops_path, :class => 'secondary-button' %>
+<%= link_to 'Cancel', workshops_path, class: 'secondary-button' %>
