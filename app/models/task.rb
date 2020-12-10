@@ -5,6 +5,6 @@ class Task < ApplicationRecord
 
     # Information displayed about a task when adding a task to a workshop
     def task_details
-        "#{title}, #{description}"
+        "#{title}"
     end # task_details
 end # Task
