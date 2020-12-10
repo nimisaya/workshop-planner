@@ -34,7 +34,7 @@
       <%# Only the creator of the workshop can edit/delete/add tasks%>
       <% if @current_user.present? %>
          <% if @current_user == @workshop.user %>
-            <li><%= link_to 'Add Tasks', edit_workshop_tasks_path %></li>
+            <li><%= link_to 'Add or Remove Tasks', edit_workshop_tasks_path %></li>
             <li><%= link_to 'Edit', edit_workshop_path(@workshop.id) %></li>
             <li><%= link_to 'Delete', workshop_path(@workshop.id), method: 'delete' %></li>
          <% else %>
