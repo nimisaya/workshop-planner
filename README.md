@@ -29,6 +29,7 @@ Logged out users:
 
 ### Future features:
 - Re-order tasks in a workshop plan
+- Automatically calculate the total duration of a workshop based on the duration of its tasks
 - Count down timer to help you keep track of your workshop in action
 - Responsive design
 
@@ -36,11 +37,12 @@ Logged out users:
 
 
 ### Designs and Database diagrams
-[View initial concepts and database diagrams on figma]()
+[View initial concepts and database diagrams on figma](https://www.figma.com/file/8OF5syt1JJbXythgf36XQv/Workshop-planner?node-id=0%3A1)
 
 ## Known bugs
 
-- New tasks are not associated with their relevant workshops due to removal of workshops >-< tasks relationship
+- New tasks are not associated with their relevant workshops due to removal of workshops >-< tasks relationship. Users can still create new tasks and assign them to a workshop. The assignment is not done at the point of creation.
 - Time must be entered in seconds when creating a task
+- Workshop duration (total_time) must be calculated manually and entered in the database
 
 ...and it definitely needs to be refactored...especially the CSS
