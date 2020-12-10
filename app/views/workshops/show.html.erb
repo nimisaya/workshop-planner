@@ -15,12 +15,14 @@
          </li>
       <% end %>
       <%# Display total time %>
+      <% if @workshop_time.present? %>
       <li>
          <span class="task-details">
             <p>Total time</p>
             <%= @workshop_time %>
          </span>
       </li>
+      <% end %>
       </ul>
    </section>
    <nav aria-label="Workshop menu">
