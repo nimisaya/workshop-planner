@@ -403,3 +403,11 @@ textarea {
     margin-bottom: 24px;
     display : block;
 }
+
+.task-summary {
+    background-color: white;
+    padding: 24px;
+    border-radius: var(--tile-radius);
+    box-shadow: var(--tile-shadow);
+    max-width: 500px;
+}

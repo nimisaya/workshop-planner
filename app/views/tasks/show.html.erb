@@ -1,12 +1,33 @@
-<h2><%= @task.title %></h2>
-<p><%= @task.description %></p>
-<p>Number of participants: <%= @task.num_participants.to_s %></p>
-<p><%= @task.tools %></p>
-<p><%= @task_time %></p>
-<% if @task.user.present?%>
-   <p> Created by: <%= @task.user.username %></p>
-<% end %>
-<p>Private? <%= @task.private %></p>
+    <br>
+    <div class="task-section-heading">
+   <h2>Task: <%= @task.title %></h2>
+   </div>
+   <br>
+<div class="task-summary">
+   <strong>Description</strong>
+   <p><%= @task.description %></p>
+   <br>
+   <strong>Number of participants:</strong>
+   <p><%= @task.num_participants.to_s %></p>
+   <br>
+   <strong>Tools:</strong>
+   <p><%= @task.tools %></p>
+   <br>
+   <strong>Duration:</strong>
+   <p><%= @task_time %></p>
+   <br>
+   <% if @task.user.present?%>
+      <strong>Created by:</strong> 
+      <p><%= @task.user.username %></p>
+   <% end %>
+   <br>
+   <strong><small>Availability:</small></strong>
+   <% if @task.private %>
+      <small>Private, only you can view this task.</small>
+   <% else %>
+      <small>Public, anyone can view or clone this task</small>
+   <% end %>
+</div>
 <nav aria-label="Task menu">
 <ul>
    <li><%= link_to "Back to #{@task.workshop.title}", workshop_path(@task.workshop_id) unless @task.workshop_id.nil? %></li>
