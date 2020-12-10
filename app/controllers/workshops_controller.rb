@@ -53,7 +53,8 @@ class WorkshopsController < ApplicationController
 
   def edit_tasks
     @workshop = Workshop.find params[:id]
-    @tasks = Task.all
+    @personal_tasks = Task.where(user_id: @current_user.id)
+    @template_tasks = Task.where(user_id: nil)
   end # edit_tasks
 
   # DELETE
