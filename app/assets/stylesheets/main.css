@@ -10,8 +10,8 @@
     --bold: 600;
 
     /* Colours */
-    --background-colour: rgb(242,242,247);;
-    --hover-colour: white;
+    --background-colour: rgb(242,242,247);
+    --hover-colour: rgba(0, 0, 0, 0.05);
     --link-colour: dimgrey;
     --primary-colour: black;
 
@@ -47,6 +47,7 @@
 body {
     background-color: var(--background-colour);
     font-family: var(--body-font);
+    
 }
 
 h1, h2 {
@@ -56,15 +57,15 @@ h1, h2 {
 /* POSITION MAIN SECTIONS */
 #wrapper {
     height: 100vh;
-    margin: 0 auto;
     max-width: var(--body-max-width);
+    margin: 0 auto;
+
     display: grid;
     grid-template-rows: 0.25fr 1fr auto;
-    grid-gap: 12px;
     grid-template-areas:
-    "header header"
-    "main main"
-    "footer footer";
+    "header"
+    "main"
+    "footer";
 }
 
 header {
@@ -73,17 +74,14 @@ header {
 
 main {
     grid-area: main;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
 }
 
 footer {
     grid-area: footer;
-
+    padding: var(--footer-padding);
     display: flex;
     justify-content: center;
-    padding: var(--footer-padding);
 }
 
 /* Navigation */
@@ -106,6 +104,7 @@ nav li {
 
 nav li:hover {
     background-color: var(--hover-colour);
+    border-radius: var( --button-radius);
 }
 
 nav a {
@@ -115,6 +114,7 @@ nav a {
 
 nav a:hover {
     text-decoration-line: underline;
+    color: black;
 }
 
 /* Prevent hover affect from being applied to user name */
@@ -172,32 +172,23 @@ label {
     line-height: 24px;
 }
 
-/* Workshops */
-/* .workshops {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-} */
-
-/* Tiles */
-.workshops {
+.tile-group {
     list-style-type: none;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0;
 }
 
 .workshop-tile {
     background-color: white;
-
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
     text-align: left;
-    color: var(--primary-colour);
+    /* color: var(--primary-colour); */
     text-decoration: none;
 
     border: var(--card-border);
@@ -209,17 +200,22 @@ label {
     height: 130px;
 
     margin: 8px;
-    padding: 12px;
+    padding: 14px;
 
     color: dimgray;
+    font-size: 14px;
 
     transition: all 0.2s ease-in-out;
 }
 
+.workshop-tile:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+}
+
 .new-workshop {
-    display: inline-block;
     text-align: center;
     color: dimgray;
+    font-size: 16px;
 }
 
 .create-symbol {
@@ -227,14 +223,10 @@ label {
     font-size: 52px;
 }
 
-
-.workshop-tile:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
-}
-
 .workshop-tile strong {
-    line-height: 32px;
+    line-height: 24px;
     color: var(--primary-colour);
+    font-size: 16px;
 }
 
 .filling-empty-space-childs {
@@ -244,22 +236,78 @@ label {
     margin: 8px;
 }
 
-h2 {
-    font-size: 20px;
+
+
+.workshops, .workshop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-heading {
+    color: dimgray;
+    font-size: small;
+    text-align: start;
+    width: 80%;
 }
 
 .workshop-task {
     /* height: 48px; */
     height: 100px;
-    width: 600px;
+    width: 80%;
+    max-width: 960px;
+    min-width: 343px;
     background-color: white;
-    border: 1px solid blue;
     border-radius: var(--button-radius);
+
+    color: var(--primary-colour);
+    text-decoration: none;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    padding: 12px;
+    padding: 24px;
     cursor: move;
+}
+
+.task-details {
+    display: flex;
+    justify-content: space-between;
+    line-height: 32px;
+}
+
+
+.task-list {
+    background-color: white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    color: var(--primary-colour);
+
+    border: var(--card-border);
+    border-radius: var(--tile-radius);
+    box-shadow: var(--tile-shadow);
+
+    display: block;
+    width: 75%;
+
+    margin: 8px;
+
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    padding: 14px;
+}
+
+.description {
+    color: dimgray;
+    font-size: 14px;
 }

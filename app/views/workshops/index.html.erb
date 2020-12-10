@@ -1,6 +1,9 @@
+<div class="workshops">
 <% if @current_user.present? %>
-    <h2>My workshops</h2>
-    <ul class="workshops">
+    <div class="section-heading">
+        <h2>My workshops</h2>
+    </div>
+    <ul class="tile-group">
         <li>
             <%= link_to new_workshop_path, class: "workshop-tile new-workshop" do %>
                 <div class="create-symbol">+</div>
@@ -20,9 +23,11 @@
     </ul>
     <br>
 <% end %>
-<h2>Suggested workshops</h2>
-<ul class="workshops">
-<% @templates.each do |workshop| %>
+<div class="section-heading">
+    <h2>Suggested workshops</h2>
+</div>
+<ul class="tile-group">
+    <% @templates.each do |workshop| %>
         <li>
             <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
                 <strong><%= workshop.title %></strong>
@@ -34,9 +39,12 @@
     <li class="filling-empty-space-childs"></li>
 </ul>
 <br>
-<h2>Workshops created by others</h2>
-<ul class="workshops">
-<% @workshops_public.each do |workshop| %>
+<% if @workshops_public.present? %>
+<div class="section-heading">
+    <h2>Workshops created by others</h2>
+</div>
+<ul class="tile-group">
+    <% @workshops_public.each do |workshop| %>
         <li>
             <%= link_to workshop_path(workshop.id), class: "workshop-tile"  do %>
                 <strong><%= workshop.title %></strong>
@@ -47,5 +55,6 @@
     <li class="filling-empty-space-childs"></li>
     <li class="filling-empty-space-childs"></li>
 </ul>
+<% end %>
 </div>
-
+</div>
