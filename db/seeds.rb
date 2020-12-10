@@ -22,24 +22,24 @@ print "Creating workshops..."
 Workshop.destroy_all
 
 w1 = Workshop.create!(
-    title: "Retro",
-    description: "This is a description of a retro",
+    title: "Kit's Farewell",
+    description: "Kit's got a new job. Time for an epic farewell.",
     total_time: 0,
-    private: false,
+    private: true,
     user_id: user1.id
 )
 
 w2 = Workshop.create!(
-    title: "Discovery Kick Off",
-    description: "This is a description of a kick off",
+    title: "Consumer Showcase",
+    description: "Time to show off our Squads work to the Tribe",
     total_time: 4000,
     private: false,
-    user_id: nil
+    user_id: user2.id
 )
 
 w3 = Workshop.create!(
-    title: "Showcase",
-    description: "This is a description of a kick off",
+    title: "Legal Training - 2020 [WIP]",
+    description: "Mandatory Legal training - Still planning",
     total_time: 0,
     private: true,
     user_id: user2.id
@@ -50,40 +50,88 @@ puts "created #{Workshop.count} workshops called #{Workshop.pluck(:title).join('
 print "Creating tasks..."
 Task.destroy_all
 
-t1 = Task.create!(
-    title: "Lightning talks",
-    description: "This is a description of a lightning talks",
-    time: 0,
-    tools: "Post-its, Sharpies",
-    num_participants: 10,
-    private: false,
+Task.create!(
+    title: "Roast",
+    description: "Time to roast Kit",
+    time: 1200,
+    tools: "Roast notes and timer",
+    num_participants: 20,
+    private: true,
     position: 0,
     user_id: user1.id,
     workshop_id: w1.id
 )
 
-t2 = Task.create!(
-    title: "Crazy 8s",
-    description: "This is a description of a crazy eights",
-    time: 0,
-    tools: "A4 paper, Sharpies",
-    num_participants: 10,
-    private: false,
-    position: nil,
-    user_id: nil,
-    workshop_id: nil
+Task.create!(
+    title: "Toast",
+    description: "Now we've torn Kit down let's build her up",
+    time: 1200,
+    tools: "Toast notes and timer",
+    num_participants: 20,
+    private: true,
+    position: 1,
+    user_id: user1.id,
+    workshop_id: w1.id
 )
 
-t3 = Task.create!(
-    title: "Bananas",
-    description: "This is a description of going bananans",
-    time: 80000,
+Task.create!(
+    title: "Party",
+    description: "Time to party",
+    time: 3000,
     tools: "A4 paper, Sharpies",
     num_participants: 10,
+    private: true,
+    position: 2,
+    user_id: user1.id,
+    workshop_id: w1.id
+)
+
+Task.create!(
+    title: "Set tone",
+    description: "Get everyone pumped and play music based on the showcase theme.",
+    time: 300,
+    tools: "Music, screen with speakers and laptop",
+    num_participants: 120,
     private: false,
-    position: nil,
-    user_id: nil,
-    workshop_id: nil
+    position: 0,
+    user_id: user2.id,
+    workshop_id: w2.id
+)
+
+Task.create!(
+    title: "GA Squad Presents",
+    description: "Feature releases this month.",
+    time: 300,
+    tools: "Screen with speakers and timer",
+    num_participants: 120,
+    private: false,
+    position: 1,
+    user_id: user2.id,
+    workshop_id: w2.id
+)
+
+Task.create!(
+    title: "Origami Squad Presents",
+    description: "Get everyone pumped and play music based on the showcase theme.",
+    time: 300,
+    tools: "Screen with speakers and timer",
+    num_participants: 120,
+    private: false,
+    position: 2,
+    user_id: user2.id,
+    workshop_id: w2.id
+)
+
+Task.create!(
+    title: "Wrap up",
+    description: "Thank all the presenters and hand over hosting to next weeks MC",
+    time: 300,
+    tools: "Music and screen with speakers",
+    num_participants: 120,
+    private: false,
+    position: 3,
+    user_id: user2.id,
+    workshop_id: w2.id
 )
 
 puts "created #{Task.count} tasks called #{Task.pluck(:title).join(', ')}."
@@ -176,7 +224,7 @@ Task.create!(
 
 puts "Retro template created"
 
-# Retro
+# Sprint plan
 puts "Creating sprint planning template"
 
 sprint_plan = Workshop.create!(
@@ -245,6 +293,79 @@ Task.create!(
     position: 4,
     user_id: nil,
     workshop_id: sprint_plan.id
+)
+
+puts "Sprint plan template created"
+
+# Design review
+puts "Creating design review template"
+
+design_review = Workshop.create!(
+    title: "Design Review",
+    description: "Base template for 30/60/90 design reviews",
+    total_time: 3600, # 1 hour
+    private: false,
+    user_id: nil # template
+)
+
+Task.create!(
+    title: "Objective",
+    description: "Invite the Product Manager to describe the objective of the work and relevant metrics.",
+    time: 300,
+    tools: "Project Brief",
+    num_participants: 8,
+    private: false,
+    position: 0,
+    user_id: nil,
+    workshop_id: design_review.id
+)
+
+Task.create!(
+    title: "Overview of work",
+    description: "Walk through the work and outline what you would like feedback on.",
+    time: 300,
+    tools: "Designs or prototype",
+    num_participants: 8,
+    private: false,
+    position: 1,
+    user_id: nil,
+    workshop_id: design_review.id
+)
+
+Task.create!(
+    title: "Review",
+    description: "Invite everyone to spend time adding comments to the design. Group the comments into themes as they are added.",
+    time: 600,
+    tools: "Post-its and sharpies",
+    num_participants: 8,
+    private: false,
+    position: 2,
+    user_id: nil,
+    workshop_id: design_review.id
+)
+
+Task.create!(
+    title: "Discussion",
+    description: "Invite everyone to discuss the feedback one theme at a time and note any follow-up actions.",
+    time: 600,
+    tools: "Notepad and pen",
+    num_participants: 8,
+    private: false,
+    position: 3,
+    user_id: nil,
+    workshop_id: design_review.id
+)
+
+Task.create!(
+    title: "Wrap up",
+    description: "Thank everyone for their input and tell them the plan for next steps.",
+    time: 600,
+    tools: "Wrap up music",
+    num_participants: 8,
+    private: false,
+    position: 3,
+    user_id: nil,
+    workshop_id: design_review.id
 )
 
 puts "Sprint plan template created"
