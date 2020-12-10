@@ -172,6 +172,18 @@ label {
     line-height: 24px;
 }
 
+.radio-button input {
+    width: 24px;
+    height: 24px;
+}
+
+.radio-button label {
+    display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+    margin-left: 12px;
+}
+
 .tile-group {
     list-style-type: none;
     display: flex;
@@ -235,8 +247,6 @@ label {
     height: 0px;
     margin: 8px;
 }
-
-
 
 .workshops, .workshop {
     display: flex;
