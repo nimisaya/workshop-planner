@@ -360,3 +360,22 @@ label {
 .checkbox-label input:checked ~ .checkbox-text {
     border: 2px solid var(--primary-colour);
 }
+
+textarea {
+    height: 100px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    
+    width: var(--form-width);
+    height: 80px;
+    border: 2px solid;
+    border-color:var(--primary-colour);
+    border-radius: var(--input-radius);
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 24px;
+    resize: vertical;
+
+    font-family: var(--body-font);
+}
