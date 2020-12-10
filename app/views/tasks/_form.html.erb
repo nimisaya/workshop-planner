@@ -14,8 +14,13 @@
     <%= f.label :num_participants, 'How many participants?' %><br>
     <%= f.number_field :num_participants%>
     <br>
-    <%= f.label :private, 'Would you like to make it private?' %><br>
-    <%= f.text_field :private %>
+    <%= f.label :private, 'Would you like to make it private?' %>
+    <br>
+    <%= f.radio_button :private, true, :checked => true, :value => true %>
+    <%= f.label :private, 'Private', value: true %>
+    <br>
+    <%= f.radio_button :private, false, :value => false %>
+    <%= f.label :private, 'Public', value: false %>
     <br>
     <%= f.submit :class => 'primary-button' %>
 <% end %>
