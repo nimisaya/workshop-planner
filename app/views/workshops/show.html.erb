@@ -1,12 +1,6 @@
 <article class="workshop">
    <header class="workshop-description">
       <h2><%= @workshop.title %></h2>
-      <p><%= @workshop.description %></p>
-      <% if @workshop.user.present?%>
-      <p><%= @workshop_time %></p>
-         <p>Created by: <%= @workshop.user.username %></p>
-      <% end %>
-      <p>Private? <%= @workshop.private %></p>
    </header>
    <br>
    <section class="task-list">
