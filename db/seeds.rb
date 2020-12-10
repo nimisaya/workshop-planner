@@ -24,7 +24,7 @@ Workshop.destroy_all
 w1 = Workshop.create!(
     title: "Kit's Farewell",
     description: "Kit's got a new job. Time for an epic farewell.",
-    total_time: 0,
+    total_time: 5400,
     private: true,
     user_id: user1.id
 )
@@ -32,7 +32,7 @@ w1 = Workshop.create!(
 w2 = Workshop.create!(
     title: "Consumer Showcase",
     description: "Time to show off our Squads work to the Tribe",
-    total_time: 4000,
+    total_time: 1200,
     private: false,
     user_id: user2.id
 )
@@ -145,7 +145,7 @@ puts "Creating retro template"
 retro_workshop = Workshop.create!(
     title: "Retro",
     description: "Improve teamwork by reflecting on what worked, what didn't and why.",
-    total_time: 3600, # 1 hour
+    total_time: 1320, 
     private: false,
     user_id: nil # template
 )
@@ -230,7 +230,7 @@ puts "Creating sprint planning template"
 sprint_plan = Workshop.create!(
     title: "Sprint plan",
     description: "Define what can be delivered in the sprint and how it will be achieved.",
-    total_time: 3600, # 1 hour
+    total_time: 1500,
     private: false,
     user_id: nil # template
 )
@@ -303,7 +303,7 @@ puts "Creating design review template"
 design_review = Workshop.create!(
     title: "Design Review",
     description: "Base template for 30/60/90 design reviews",
-    total_time: 3600, # 1 hour
+    total_time: 2400, 
     private: false,
     user_id: nil # template
 )
