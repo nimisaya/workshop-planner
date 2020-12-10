@@ -1,4 +1,4 @@
-<p><%= @task.title %></p>
+<h2><%= @task.title %></h2>
 <p><%= @task.description %></p>
 <p>Number of participants: <%= @task.num_participants.to_s %></p>
 <p><%= @task.tools %></p>
@@ -7,8 +7,11 @@
    <p> Created by: <%= @task.user.username %></p>
 <% end %>
 <p>Private? <%= @task.private %></p>
+<nav aria-label="Task menu">
+<ul>
+   <li><%= link_to "Back to #{@task.workshop.title}", workshop_path(@task.workshop_id) unless @task.workshop_id.nil? %></li>
 
-<%= link_to "Back to #{@task.workshop.title}", workshop_path(@task.workshop_id) unless @task.workshop_id.nil? %>
-
-<%= link_to 'Edit', edit_task_path(@task.id) %>
-<%= link_to 'Delete', task_path(@task.id), method: 'delete' %>
+   <li><%= link_to 'Edit', edit_task_path(@task.id) %></li>
+   <li><%= link_to 'Delete', task_path(@task.id), method: 'delete' %></li>
+   </ul>
+</nav>
