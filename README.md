@@ -1,4 +1,7 @@
 # Workshop Planner
+
+_Note: This project is parked until 2021._
+
 ## Overview
 Ever had to plan a workshop? A retro? Or maybe an entire design sprint? 
 Workshop planner saves you from digging in your old files to find that template you vaguely recall using the last time by providing a space to keep track of all your workshop plans. Create your own plans or use the provided plans as a starting point.
@@ -46,3 +49,4 @@ Logged out users:
 - Workshop duration (total_time) must be calculated manually and entered in the database
 
 ...and it definitely needs to be refactored...especially the CSS
+
