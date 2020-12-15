@@ -35,6 +35,7 @@ Logged out users:
 - Re-order tasks in a workshop plan
 - Automatically calculate the total duration of a workshop based on the duration of its tasks
 - Countdown timer to help you keep track of your workshop in action
+- Re-design UI
 - Responsive design and darkmode
 
 [View full list of current and future features on trello.](https://trello.com/invite/b/0HBsn2Tl/bfe64da0ba313fa531003da977d0b31c/workshop-planner)
