@@ -10,10 +10,11 @@ Workshop planner saves you from digging in your old files to find that template 
 ## Link
 Plan a workshop: [workshop-plan.herokuapp.com](https://workshop-plan.herokuapp.com/)
 
-## Tech stack
+## Tech
 
 - Ruby on Rails
-- CSS
+- CSS & HTML
+- Deployed on Heroku
 
 ## Features
 
@@ -33,8 +34,8 @@ Logged out users:
 ### Future features:
 - Re-order tasks in a workshop plan
 - Automatically calculate the total duration of a workshop based on the duration of its tasks
-- Count down timer to help you keep track of your workshop in action
-- Responsive design
+- Countdown timer to help you keep track of your workshop in action
+- Responsive design and darkmode
 
 [View full list of current and future features on trello.](https://trello.com/invite/b/0HBsn2Tl/bfe64da0ba313fa531003da977d0b31c/workshop-planner)
 
@@ -48,5 +49,5 @@ Logged out users:
 - Time must be entered in seconds when creating a task
 - Workshop duration (total_time) must be calculated manually and entered in the database
 
-...and it definitely needs to be refactored...especially the CSS
+...and it definitely needs to be refactored...
 
