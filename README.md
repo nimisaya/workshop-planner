@@ -1,6 +1,6 @@
 # Workshop Planner
 
-_Note: This project is parked until 2021._
+_Note: This project is parked._
 
 ## Overview
 Ever had to plan a workshop? A retro? Or maybe an entire design sprint? 
